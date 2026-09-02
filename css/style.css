@@ -1,0 +1,429 @@
+/* =========================================================
+   Tokens
+   ========================================================= */
+:root {
+  --bg: #0b0f14;
+  --bg-elevated: #121821;
+  --bg-alt: #0e1319;
+  --border: #202836;
+  --text: #e6edf3;
+  --text-muted: #8b98a5;
+  --accent: #f2b134;
+  --accent-soft: rgba(242, 177, 52, 0.12);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* =========================================================
+   Base
+   ========================================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  scroll-margin-top: 70px;
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  margin-bottom: 2.5rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #0b0f14;
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  background-color: #ffcb61;
+  border-color: #ffcb61;
+  color: #0b0f14;
+}
+
+/* =========================================================
+   Navbar
+   ========================================================= */
+#mainNav {
+  background-color: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#mainNav.scrolled {
+  border-bottom-color: var(--border);
+  background-color: rgba(11, 15, 20, 0.97);
+}
+
+.navbar-brand {
+  font-family: var(--font-mono);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.brand-mono {
+  color: var(--accent);
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text) !important;
+}
+
+.nav-cta {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.35rem 0.9rem !important;
+  margin-left: 0.5rem;
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero {
+  padding: 9rem 0 5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  margin-bottom: 0.25rem;
+}
+
+.hero-role {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-lead {
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.hero-socials {
+  margin-bottom: 0;
+}
+
+.hero-socials a {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
+.hero-socials a:hover {
+  color: var(--accent);
+}
+
+/* Terminal visual */
+.terminal {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  background-color: #0e141c;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+}
+
+.terminal-body pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.tk-comment { color: #5c6b7a; }
+.tk-key { color: #7ec8e3; }
+.tk-str { color: var(--accent); }
+.tk-fn { color: #c792ea; }
+
+/* =========================================================
+   Skills
+   ========================================================= */
+.skills-cat {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  color: var(--text-muted);
+}
+
+.skill-list i {
+  width: 1.2em;
+  text-align: center;
+  color: var(--accent);
+}
+
+.skill-note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* =========================================================
+   Proyectos
+   ========================================================= */
+.project-card {
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg-elevated);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+}
+
+.project-thumb {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: var(--accent);
+  background-color: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-body {
+  padding: 1.25rem;
+}
+
+.project-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-body p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.88rem;
+}
+
+.project-links a {
+  color: var(--text-muted);
+}
+
+.project-links a:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   Timeline / Experiencia
+   ========================================================= */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background-color: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  border: 2px solid var(--accent);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-org {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.timeline-content ul {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Contacto
+   ========================================================= */
+.contact-lead {
+  color: var(--text-muted);
+  max-width: 50ch;
+  margin: 0 auto 2rem;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   Accesibilidad
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
