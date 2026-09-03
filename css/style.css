@@ -328,6 +328,63 @@ a {
 }
 
 /* =========================================================
+   Certificaciones
+   ========================================================= */
+.cert-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg-elevated);
+  transition: border-color 0.2s ease;
+}
+
+.cert-card:hover {
+  border-color: var(--accent);
+}
+
+.cert-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+.cert-body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.cert-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.cert-body p:not(.cert-meta) {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.cert-link {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.cert-link:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
    Timeline / Experiencia
    ========================================================= */
 .timeline {
